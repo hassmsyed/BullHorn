@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hassan's Twitter App</title>
+</head>
+<body>
+<a href="/">Show All Messages</a><br />
+Message :<span th:text="${message.content}" ></span><br/>
+Posted Date :<span th:text="${message.postedDate}" ></span><br/>
+Sent by :<span th:text="${message.sentBy}" ></span><br/>
+<a th:href="@{/delete/{id}(id=${todo.id})}">Delete this task
+</a>
+</body>
+</html>

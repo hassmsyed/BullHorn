@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:fragment="headinfo">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,
+        inital-scale=1" />
+    <title>Hassan's Twitter App</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body { padding-bottom: 300px;}
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-default" th:fragment="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Menu
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/login">Sign in</a>
+                    <a class="dropdown-item" href="/add">New Message</a>
+                </div>
+            </div>
+
+
+
+
+</nav>
+<nav class="navbar navbar-default navbar-fixed-bottom"
+     th:fragment="footer">
+    <div class="container">
+        <u1  class="nav navbar-nav">
+            <li><a href="/">Home </a></li>
+            <li><a href="#">2019 Messaging App</a></li>
+        </u1>
+    </div>
+</nav>
+<th:block th:fragment="jslinks">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js">
+
+    </script>
+    <script src="/js/bootstrap.js"></script>
+</th:block>
+</body>
+</html>

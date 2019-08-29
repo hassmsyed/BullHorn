@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: headinfo">
+    <meta charset="UTF-8">
+    <title>Hassan's Twitter App</title>
+</head>
+<body>
+<h1>Direct Messages</h1>
+<nav th:replace="base :: navbar"></nav>
+<div class ="jumbotron">
+
+<form action="#" th:action="@{/processing}" th:object="${message}" method="post"
+    enctype="multipart/form-data">
+    <input type="hidden" th:field="*{id}" />
+    Message: <br />
+    <textarea rows="3" th:field="*{content}" />
+    <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{content}"></span><br />
+    <input type="file" name="file" /><br/><br />
+    Posted Date :<input type="date" th:field="*{postedDate}" />
+    <span th:if="${#fields.hasErrors('postedDate')}"
+          th:errors="*{postedDate}"></span><br />
+    Sent by:<input type="text" th:field="*{sentBy}" />
+    <span th:if="${#fields.hasErrors('sentBy')}"
+          th:errors="*{sentBy}"></span><br />
+    <br />
+    <input type="submit" value="Send" />
+
+</form>
+</div>
+<nav th:replace="base :: footer"></nav>
+<th:block th:replace="base :: jslinks"></th:block>
+</body>
+</html>

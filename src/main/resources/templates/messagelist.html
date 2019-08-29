@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: headinfo">
+    <meta charset="UTF-8">
+    <title>Hassan's Twitter App</title>
+</head>
+<body>
+<h1>Direct Messages</h1>
+<nav th:replace="base :: navbar"></nav>
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Message</th>
+        <th scope="col">Img</th>
+        <th scope="col">Posted Date</th>
+        <th scope="col">Sent by</th>
+    </tr>
+    </thead>
+    <tbody>
+        <th scope="row"></th>
+        <tr th:each="message : ${messages}">
+        <td th:text="${message.content}"></td>
+        <td th:text="${message.postedDate}"></td>
+        <td th:text="${message.sentBy}"></td>
+        <td th:if="${message.messageImg} != null">
+            <img th:src="${message.messageImg}">
+        </td>
+        <td>
+            <a th:href="@{/messageupdate/{id}(id=${message.id})}">Update</a> -
+            <a th:href="@{/messagedetail/{id}(id=${message.id})}">Details</a> -
+            <a th:href="@{/messagedelete/{id}(id=${message.id})}">Delete</a>
+        </td>
+        </tr>
+    </tbody>
+</table>
+<nav th:replace="base :: footer"></nav>
+<th:block th:replace="base :: jslinks"></th:block>
+</body>
+</html>
