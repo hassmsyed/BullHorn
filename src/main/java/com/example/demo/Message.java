@@ -28,6 +28,7 @@ public class Message {
     @Size(min=2,max=20)
     private String sentBy;
 
+    @NotNull
     private String messageImg;
 
 

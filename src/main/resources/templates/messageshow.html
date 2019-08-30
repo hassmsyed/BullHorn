@@ -6,10 +6,12 @@
 </head>
 <body>
 <a href="/">Show All Messages</a><br />
-Message :<span th:text="${message.content}" ></span><br/>
-Posted Date :<span th:text="${message.postedDate}" ></span><br/>
-Sent by :<span th:text="${message.sentBy}" ></span><br/>
-<a th:href="@{/delete/{id}(id=${todo.id})}">Delete this task
-</a>
+Message :<span th:text="${message.content}"></span><br/>
+Posted Date :<span th:text="${message.postedDate}"></span><br/>
+Sent by :<span th:text="${message.sentBy}"></span><br/>
+Image : <img th:src="${message.messageImg}" /> <br/>
+
+
+<a th:href="@{/messagedelete/{id}(id=${message.id})}">Delete this message</a>
 </body>
 </html>

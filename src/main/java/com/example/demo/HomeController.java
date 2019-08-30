@@ -32,11 +32,15 @@ public class HomeController {
         return "messageform";
     }
 
-    @PostMapping("/processing")
+    @PostMapping("/add")
     public String messageProcess(@ModelAttribute Message message,
                                  @Valid @RequestParam("file") MultipartFile file, BindingResult result) {
         if (result.hasErrors()) {
-            return "messageform";
+            return "redirect:/add";
+
+        }
+        if (file.isEmpty()){
+            return "redirect:/add";
         }
 
         try {

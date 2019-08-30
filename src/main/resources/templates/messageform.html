@@ -9,14 +9,14 @@
 <nav th:replace="base :: navbar"></nav>
 <div class ="jumbotron">
 
-<form action="#" th:action="@{/processing}" th:object="${message}" method="post"
+<form th:action="@{/add}" th:object="${message}" method="POST"
     enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
     Message: <br />
     <textarea rows="3" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
           th:errors="*{content}"></span><br />
-    <input type="file" name="file" /><br/><br />
+    Please Select Image : <input type="file" name="file" /> <br/><br />
     Posted Date :<input type="date" th:field="*{postedDate}" />
     <span th:if="${#fields.hasErrors('postedDate')}"
           th:errors="*{postedDate}"></span><br />
