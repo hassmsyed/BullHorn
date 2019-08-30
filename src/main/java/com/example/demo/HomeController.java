@@ -25,6 +25,10 @@ public class HomeController {
         model.addAttribute("messages", messageRepository.findAll());
         return "messagelist";
     }
+    @RequestMapping("login")
+    public String login(){
+        return "login";
+    }
 
     @GetMapping("/add")
     public String messageForm(Model model) {
